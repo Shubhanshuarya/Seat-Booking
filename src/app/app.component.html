@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="sidebar">
+    <h1>Train Seat Reservation</h1>
+    <app-booking-form></app-booking-form>
+    <div *ngIf="storedReservations.length" class="reservations">
+      <h3>Stored Reservations</h3>
+      <ul>
+        <li *ngFor="let res of storedReservations">
+          {{ res.name }} reserved {{ res.numSeats }} seats: {{ res.seatIds.join(', ') }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="main">
+    <app-seat-chart></app-seat-chart>
+  </div>
+</div>
